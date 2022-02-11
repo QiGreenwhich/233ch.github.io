@@ -1,0 +1,44 @@
+    <!DOCTYPE html>
+    <html lang="zh">
+    <head>
+        <link rel="stylesheet" href="css/index.css">
+        <script src="js/setname.js"></script>
+        <script src="js/loaddata.js"></script>
+        <script type="text/javascript">
+            window.onload = function(){
+                document.getElementById("selectid").onclick = setname;
+                loaddata();
+            }
+        </script>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>233ch</title>
+    </head>
+    <body>
+        <div id="header">
+            <header>
+                <span id="logo">
+                    <a class="logo" href="index.html">233ch</a>
+                </span>
+                <span id="welcome">
+                </span>
+                <span id="selectid">
+                    <a class="name">填写你的昵称</a>
+                </span>
+            </header>
+        </div>
+        <div id="body">
+            <h1>这只是某个前端小白花了一下午建立的一个匿名讨论串，然后发现用户修改json数据需要用到后端的技术栈......</h1>
+            <h1>寄！</h1>
+            <h2>等站长学完后端再继续施工😭，暂时转型为博客</h2> 
+            <div id="content1">
+            </div>
+        </div>
+        <div id="add">
+            <b>在此填写留言内容：</b><br>
+            <textarea name="" id="" cols="50" rows="20" maxlength="500"></textarea><br>
+            <button>发布</button>
+        </div>
+    </body>
+    </html>

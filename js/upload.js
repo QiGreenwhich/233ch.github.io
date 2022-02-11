@@ -1,0 +1,8 @@
+function upload(name,content){
+    
+
+
+
+
+
+}
