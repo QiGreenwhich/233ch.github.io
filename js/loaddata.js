@@ -7,7 +7,7 @@ function loaddata() {
         if (request.status == 200) {/*返回状态为200，即为数据获取成功*/
             var data = JSON.parse(request.responseText);
             for (var i = 0; i < data.length; i++) {
-                document.getElementById("content1").innerHTML += "<div id='content'><div id='divname'><div>" + (i + 1) + "#</div>" + data[i].name + "<div id='divcontent'>" + data[i].content + "</div></div></div>"
+                document.getElementById("content1").innerHTML += "<div id='content'><div id='divname'><div>" + (i + 1) + "#</div>" + data[i].name + "<div id='divcontent'>" + data[i].content + "</div><script type='text/javascript'>show();</script></div></div>"
             }
         }
     }
