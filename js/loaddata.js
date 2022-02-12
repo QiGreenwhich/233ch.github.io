@@ -12,30 +12,37 @@ function loaddata() {
             show();
         }
     }
-}
+}    
+var text = new Array();
+var newBox = new Array();
+var btn = new Array();
 function show() {
     var box = document.getElementsByClassName("divcontent");
     for (var j = 0; j < box.length; j++) {
-        var text = box[j].innerHTML;
-        var newBox = document.createElement("div");
-        var btn = document.createElement("a");
-        btn.setAttribute("class", "btn");
-        newBox.innerHTML = text.substring(0, 66);
-        btn.innerHTML = text.length > 66 ? "显示全部 ▼" : "";
-        btn.href = "javascript:void(0)";
-        btn.onclick = function () {
-            if (btn.innerHTML == "显示全部 ▼") {
-                btn.innerHTML = "收起 ▲";
-                newBox.innerHTML = text;
+        text.push(box[j].innerHTML);
+        newBox.push(document.createElement("div"));
+        newBox[j].setAttribute("class","newBox"+(j+1));
+        btn.push(document.createElement("a"));
+        btn[j].setAttribute("class", "btn"+(j+1));
+        btn[j].setAttribute("number", j);
+        newBox[j].innerHTML = text[j].substring(0, 66);
+        btn[j].innerHTML = text[j].length > 66 ? "显示全部 ▼" : "";
+        btn[j].href = "javascript:void(0)";
+        btn[j].onclick = function () {
+            if (this.innerText == "显示全部 ▼") {
+                this.innerText = "收起 ▲";
+                var str=text[this.getAttribute("number")];
+                newBox[this.getAttribute("number")].innerHTML = str;
             }
             else {
-                btn.innerHTML = "显示全部 ▼";
-                newBox.innerHTML = text.substring(0, 66);
+                this.innerText = "显示全部 ▼";
+                var str=text[this.getAttribute("number")];
+                newBox[this.getAttribute("number")].innerHTML = str.substring(0, 66);
             }
         }
         box[j].innerHTML = "";
-        box[j].appendChild(newBox);
-        box[j].appendChild(btn);
+        box[j].appendChild(newBox[j]);
+        box[j].appendChild(btn[j]);
     }
 }
 
