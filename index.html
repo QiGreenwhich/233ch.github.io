@@ -4,10 +4,11 @@
         <link rel="stylesheet" href="css/index.css">
         <script src="js/setname.js"></script>
         <script src="js/loaddata.js"></script>
+        <script src="js/show.js"></script>
         <script type="text/javascript">
+            loaddata(); 
             window.onload = function(){
                 document.getElementById("selectid").onclick = setname;
-                loaddata();
                 show();
             }
         </script>
