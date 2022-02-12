@@ -1,5 +1,5 @@
 function loaddata() {
-    var url = "data/data.json"/*json文件url，本地的就写本地的位置，如果是服务器的就写服务器的路径*/
+    var url = "https://qigreenwhich.github.io/233ch.github.io/data/data.json"/*json文件url，本地的就写本地的位置，如果是服务器的就写服务器的路径*/
     var request = new XMLHttpRequest();
     request.open("get", url);/*设置请求方法与路径*/
     request.send(null);/*不发送数据到服务器*/
@@ -25,6 +25,7 @@ function show() {
         btn.push(document.createElement("a"));
         btn[j].setAttribute("class", "btn"+(j+1));
         btn[j].setAttribute("number", j);
+        btn[j].setAttribute("name","btn");
         newBox[j].innerHTML = text[j].substring(0, 66);
         btn[j].innerHTML = text[j].length > 66 ? "显示全部 ▼" : "";
         btn[j].href = "javascript:void(0)";
