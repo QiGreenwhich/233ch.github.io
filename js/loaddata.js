@@ -7,14 +7,15 @@ function loaddata() {
         if (request.status == 200) {/*返回状态为200，即为数据获取成功*/
             var data = JSON.parse(request.responseText);
             for (var i = 0; i < data.length; i++) {
-                document.getElementById("content1").innerHTML += "<div id='content'><div id='divname'><div>" + (i + 1) + "#</div>" + data[i].name + "<div id='divcontent'>" + data[i].content + "</div></div></div>"
+                document.getElementById("content1").innerHTML += "<div id='content'><div id='divname'><div>" + (i + 1) + "#</div>" + data[i].name + "<div class='divcontent'>" + data[i].content + "</div></div></div>";
             }
+            show();
         }
     }
-    show();
 }
 function show() {
-    var box = document.getElementById("divcontent");
+    var box = document.getElementsByClassName("divcontent");
+    console.log(box);
     for (var j = 0; j < box.length; j++) {
         var text = box[j].innerHTML;
         var newBox = document.createElement("div");
@@ -36,7 +37,6 @@ function show() {
         box[j].innerHTML = "";
         box[j].appendChild(newBox);
         box[j].appendChild(btn);
-
     }
 }
 
