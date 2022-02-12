@@ -7,9 +7,36 @@ function loaddata() {
         if (request.status == 200) {/*返回状态为200，即为数据获取成功*/
             var data = JSON.parse(request.responseText);
             for (var i = 0; i < data.length; i++) {
-                document.getElementById("content1").innerHTML += "<div id='content'><div id='divname'><div>" + (i + 1) + "#</div>" + data[i].name + "<div id='divcontent'>" + data[i].content + "</div><script type='text/javascript'>show();</script></div></div>"
+                document.getElementById("content1").innerHTML += "<div id='content'><div id='divname'><div>" + (i + 1) + "#</div>" + data[i].name + "<div id='divcontent'>" + data[i].content + "</div></div></div>"
+                show();
             }
         }
     }
+}
+function show()
+{
+  var box = document.getElementById("divcontent");
+  var text = box.innerHTML;
+  var newBox = document.createElement("div");
+  var btn = document.createElement("a");
+  btn.setAttribute("class","btn");
+  newBox.innerHTML = text.substring(0,66);
+  btn.innerHTML = text.length > 66 ? "显示全部 ▼" : "";
+  btn.href = "javascript:void(0)";
+  btn.onclick = function(){
+    if(btn.innerHTML == "显示全部 ▼")
+    {
+      btn.innerHTML = "收起 ▲";
+      newBox.innerHTML = text;
+    }
+    else
+    {
+      btn.innerHTML = "显示全部 ▼";
+      newBox.innerHTML = text.substring(0,66);
+    }
+  }
+  box.innerHTML = "";
+  box.appendChild(newBox);
+  box.appendChild(btn);
 }
 

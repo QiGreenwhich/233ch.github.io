@@ -17,10 +17,10 @@ a.name{
 a.btn{
     text-align: center;
 }
-a:visited,a:link{
+a.btn:visited,a.btn:link{
     color: black;
 }
-a:active,a:hover{
+a.btn:active,a.btn:hover{
     color: gray;
 }
 #welcome{
