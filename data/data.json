@@ -21,6 +21,6 @@
     },
     {
         "name":"Bad Apple!!",
-        "content":"<iframe src='//player.bilibili.com/player.html?aid=706&bvid=BV1xx411c79H&cid=3724723&page=1' scrolling='no' border='0' frameborder='no' framespacing='0' allowfullscreen='false'> </iframe>"
+        "content":"<iframe src='//player.bilibili.com/player.html?aid=706&bvid=BV1xx411c79H&cid=3724723&page=1'align='middle' scrolling='no' border='0' frameborder='no' framespacing='0' allowfullscreen='false'> </iframe>"
     }
 ]
