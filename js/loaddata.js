@@ -15,7 +15,6 @@ function loaddata() {
 }
 function show() {
     var box = document.getElementsByClassName("divcontent");
-    console.log(box);
     for (var j = 0; j < box.length; j++) {
         var text = box[j].innerHTML;
         var newBox = document.createElement("div");
